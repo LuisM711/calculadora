@@ -13,50 +13,33 @@
 <body>
     <img src="Apple-Logo.png" id="logo" alt="">
     <div id="calculadora">
-        <!-- <div id="display"> -->
-        <input type="text" id="displayInput" disabled>
-        <!-- </div> -->
+        <div id="display">
+            <div id="displayInput">0</div>
+        </div>
         <div id="teclado">
+            <button class="tecla gris" id="clear" onclick="clearDisplay()">AC</button>
+            <button class="tecla naranja" onclick="addMasMenos()">+/-</button>
+            <button class="tecla naranja" onclick="addPorcentaje()">%</button>
+            <button class="tecla naranja" onclick="addOperator('/')">÷</button>
             <button class="tecla" onclick="addNumber(7)">7</button>
             <button class="tecla" onclick="addNumber(8)">8</button>
             <button class="tecla" onclick="addNumber(9)">9</button>
-            <button class="tecla naranja" onclick="addOperator('/')">/</button>
+            <button class="tecla naranja" onclick="addOperator('*')">x</button>
             <button class="tecla" onclick="addNumber(4)">4</button>
             <button class="tecla" onclick="addNumber(5)">5</button>
             <button class="tecla" onclick="addNumber(6)">6</button>
-            <button class="tecla naranja" onclick="addOperator('*')">*</button>
+            <button class="tecla naranja" onclick="addOperator('-')">-</button>
             <button class="tecla" onclick="addNumber(1)">1</button>
             <button class="tecla" onclick="addNumber(2)">2</button>
             <button class="tecla" onclick="addNumber(3)">3</button>
-            <button class="tecla naranja" onclick="addOperator('-')">-</button>
-            <button class="tecla" onclick="addNumber(0)">0</button>
-            <button class="tecla" onclick="addOperator('.')">.</button>
-            <button class="tecla" onclick="calculate()">=</button>
             <button class="tecla naranja" onclick="addOperator('+')">+</button>
-            <button class="tecla gris" onclick="clearDisplay()">C</button>
+            <button class="tecla tecla-doble" onclick="addNumber(0)">0</button>
+            <button class="tecla" onclick="addPunto()">.</button>
+            <button class="tecla" onclick="calculate()">=</button>
         </div>
     </div>
-    <script>
-        function addNumber(number) {
-            if (displayInput.value == 'Syntax Error')
-                clearDisplay();
-            document.getElementById('displayInput').value += number;
-        }
-        function addOperator(operator) {
-            document.getElementById('displayInput').value += operator;
-        }
-        function calculate() {
-            try {
-                document.getElementById('displayInput').value = eval(document.getElementById('displayInput').value);
-            } catch (error) {
-                document.getElementById('displayInput').value = 'Syntax Error';
-            }
-        }
-        function clearDisplay() {
-            document.getElementById('displayInput').value = '';
-        }
-    </script>
 
+    
 </body>
 
 </html>
